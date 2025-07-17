@@ -93,6 +93,145 @@
   }
 }
 
+/* Tic Tac Toe Custom Styles */
+.ttt-title {
+  font-size: 2.5rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+.ttt-desc {
+  font-size: 1.02rem;
+  margin-bottom: 20px;
+  color: #8492a6;
+}
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  grid-template-rows: repeat(3, 72px);
+  gap: 8px;
+  margin: 28px auto 10px;
+  justify-content: center;
+}
+.ttt-square {
+  width: 72px;
+  height: 72px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.18s, box-shadow 0.15s;
+}
+.ttt-square:focus {
+  box-shadow: 0 0 0 3px #c3e0ff99;
+}
+.ttt-square:disabled {
+  background: #e6e9ed;
+  cursor: not-allowed;
+  color: #b8b8b8;
+}
+
+.ttt-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+.ttt-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.ttt-label {
+  margin-right: 6px;
+  font-size: 1rem;
+  color: #506060;
+}
+.ttt-btn, .ttt-btn-main {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8px;
+  padding: 7px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 3px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(36,37,37,.08);
+  transition: background 0.2s, transform 0.13s;
+}
+.ttt-btn-main {
+  background: #429aa7;
+}
+.ttt-btn:hover, .ttt-btn-main:hover {
+  opacity: 0.93;
+  transform: translateY(-2px);
+}
+.ttt-info {
+  margin: 8px auto 18px;
+  font-size: 1.16rem;
+  color: #618cf0;
+  min-height: 28px;
+  font-weight: 500;
+}
+
+/* Modal styles */
+.ttt-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(140,170,220,0.25);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ttt-modal {
+  background: #fff;
+  box-shadow: 0 3px 18px rgba(60,60,90,0.20);
+  border-radius: 14px;
+  padding: 32px 22px;
+  min-width: 220px;
+  text-align: center;
+  z-index: 25;
+}
+.ttt-modal-msg {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #13666a;
+  margin-bottom: 16px;
+}
+
+/* Footer */
+.ttt-footer {
+  margin-top: 18px;
+  color: #a7b0b8;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, 46px);
+    grid-template-rows: repeat(3, 46px);
+    gap: 6px;
+  }
+  .ttt-square {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+  .ttt-modal {
+    padding: 16px 8px;
+    min-width: 150px;
+  }
+}
+
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .theme-toggle {
